@@ -1,0 +1,12 @@
+﻿@model Categories
+@{
+    string FormatMoney(decimal price)
+    {
+        return $"{price:c}";
+    }
+}
+
+<b>@Model.Name</b><br />
+<b>Description: @Model.Description</b><br />
+<b>Price: @FormatMoney(Model.Price)</b>
+
