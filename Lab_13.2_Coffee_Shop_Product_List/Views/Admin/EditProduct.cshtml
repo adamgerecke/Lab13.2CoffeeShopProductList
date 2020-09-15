@@ -1,0 +1,30 @@
+﻿@model Product
+
+
+<h1>Product to edit</h1>
+<br />
+<br />
+
+<form method="POST" action="/Admin/SaveProduct">
+    <label for="Name" style="display:block"><b>Product Name:</b></label>
+    <input type="text" name="Name" value="@Model.Name" required /><br /><br />
+
+    <label for="Description" style="display:block"><b>Description:</b></label>
+    <input type="text" name="Description" value="@Model.Description" required /><br /><br />
+
+    <label for="Price" style="display:block"><b>Price:</b></label>
+    <input type="text" name="Price" value="@Model.Price" required /><br /<br />
+
+    <label for="Category" style="display:block"><b>Category:</b></label>
+    <select name="Category" required>
+        <option value="selected" selected="@Model.Category">Category</option>
+        <option value="Drink">Drink</option>
+        <option value="Food">Food</option>
+        <option value="Candy">Candy</option>
+        <option value="Gift">Gift</option>
+    </select><br /><br />
+    <input type="submit" value="Submit">
+    <input type="hidden" name="_id" value="@Model.ID" />
+
+</form>
+

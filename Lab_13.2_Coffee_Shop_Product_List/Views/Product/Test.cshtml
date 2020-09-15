@@ -1,15 +1,15 @@
-﻿@model List<Categories>
+﻿@model List<Product>
 @{
     int number = 3;
 }
 
-Example Link Generated Dynamically:<br />
-<a href="/Product/Test?catid=@number"> Test Link </a><br />
+Click Here for the Admin Page:<br />
+<a href="/Admin/Admin"> Admin Page </a><br />
 
 <br />
 
 Here's the list:<br />
-@foreach(Categories cat in Model)
+@foreach(Product cat in Model)
 {
    // <a href="/Product/Category?catid=@cat.Category">@cat.Name</a><br />
 

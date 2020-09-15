@@ -1,0 +1,25 @@
+﻿@model Product
+
+<h1>Add a New Product</h1>
+
+<form method="POST" action="/Admin/NewProduct">
+    <label for="Name" style="display:block"><b>Product Name:</b></label>
+    <input type="text" name="Name" required /><br /><br />
+
+    <label for="Description" style="display:block"><b>Description:</b></label>
+    <input type="text" name="Description" /><br /><br />
+
+    <label for="Price" style="display:block"><b>Price:</b></label>
+    <input type="text" name="Price" required /><br /<br />
+
+    <label for="Category" style="display:block"><b>Category:</b></label>
+    <select name="Category" required>
+        <option value="selected" selected="selected">Category</option>
+        <option value="Drink">Drink</option>
+        <option value="Food">Food</option>
+        <option value="Candy">Candy</option>
+        <option value="Gift">Gift</option>
+    </select><br /><br />
+    <input type="submit" value="Submit">
+
+</form>

@@ -20,7 +20,7 @@ namespace Lab_13._2_Coffee_Shop_Product_List.Models
         {
             IDbConnection db = new SqlConnection("Server=CXJSN13\\SQLEXPRESS;Database=Lab13.2CoffeeShopProductList;user id=da;password=P@$$word!@#;");
             db.Open();
-            List<Categories> cats = db.Query<Categories>("select * from Product").AsList<Categories>();
+            List<Product> cats = db.Query<Product>("select * from Product").AsList<Product>();
             db.Close();
 
             return View(cats);
@@ -30,11 +30,10 @@ namespace Lab_13._2_Coffee_Shop_Product_List.Models
         {
             IDbConnection db = new SqlConnection("Server=CXJSN13\\SQLEXPRESS;Database=Lab13.2CoffeeShopProductList;user id=da;password=P@$$word!@#;");
             db.Open();
-            Categories cat = db.QuerySingle<Categories>($"select * from Product where ID = {catid}");
+            Product cat = db.QuerySingle<Product>($"select * from Product where ID = {catid}");
             db.Close();
             return View(cat);
         }
-
 
     }
 }

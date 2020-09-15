@@ -1,0 +1,21 @@
+﻿@model List<Product>
+@{
+    ViewData["Title"] = "Admin";
+}
+
+<h1>Admin Page</h1>
+
+
+
+
+@foreach (Product product in Model)
+{
+<fieldset>
+    <a><b>@product.Name</b></a><br />
+    <input type="button" onclick="location.href='/Admin/EditProduct?_id=@product.ID';" value="Edit" style="background-color:#118c36" />
+    <input type="button" onclick="location.href='/Admin/DeleteProduct?_id=@product.ID';" value="Delete" style="background-color:#e61c09" />
+    <br />
+    <br />
+</fieldset>
+}
+<a href="/Admin/NewProduct"><b>Add New Item</b></a>

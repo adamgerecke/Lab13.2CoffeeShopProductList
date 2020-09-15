@@ -1,4 +1,4 @@
-﻿@model Categories
+﻿@model Product
 @{
     string FormatMoney(decimal price)
     {
@@ -6,7 +6,19 @@
     }
 }
 
-<b>@Model.Name</b><br />
-<b>Description: @Model.Description</b><br />
+<b>Category: @Model.Category</b>
+<br />
+<b>Name: @Model.Name</b>
+<br />
+<b>Description: @Model.Description</b>
+<br />
 <b>Price: @FormatMoney(Model.Price)</b>
+<br />
+<br />
+<br />
+
+Click Here to return to the Product index:
+<br />
+<a href="/Product/Test"> Product Index </a>
+<br />
 
