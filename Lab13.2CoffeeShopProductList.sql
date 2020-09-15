@@ -1,6 +1,6 @@
 USE [master]
 GO
-/****** Object:  Database [Lab13.2CoffeeShopProductList]    Script Date: 9/11/2020 4:02:59 PM ******/
+/****** Object:  Database [Lab13.2CoffeeShopProductList]    Script Date: 9/14/2020 8:43:32 PM ******/
 CREATE DATABASE [Lab13.2CoffeeShopProductList]
  CONTAINMENT = NONE
  ON  PRIMARY 
@@ -78,20 +78,20 @@ ALTER DATABASE [Lab13.2CoffeeShopProductList] SET QUERY_STORE = OFF
 GO
 USE [Lab13.2CoffeeShopProductList]
 GO
-/****** Object:  User [da]    Script Date: 9/11/2020 4:02:59 PM ******/
+/****** Object:  User [da]    Script Date: 9/14/2020 8:43:32 PM ******/
 CREATE USER [da] FOR LOGIN [da] WITH DEFAULT_SCHEMA=[dbo]
 GO
-/****** Object:  Table [dbo].[Product]    Script Date: 9/11/2020 4:02:59 PM ******/
+/****** Object:  Table [dbo].[Product]    Script Date: 9/14/2020 8:43:33 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[Product](
 	[ID] [int] IDENTITY(1,1) NOT NULL,
-	[Name] [nchar](20) NOT NULL,
+	[Name] [nchar](20) NULL,
 	[Description] [nchar](50) NULL,
-	[Price] [money] NOT NULL,
-	[Category] [nchar](15) NOT NULL,
+	[Price] [money] NULL,
+	[Category] [nchar](10) NULL,
  CONSTRAINT [PK_Product] PRIMARY KEY CLUSTERED 
 (
 	[ID] ASC
@@ -100,27 +100,29 @@ CREATE TABLE [dbo].[Product](
 GO
 SET IDENTITY_INSERT [dbo].[Product] ON 
 GO
-INSERT [dbo].[Product] ([ID], [Name], [Description], [Price], [Category]) VALUES (1, N'Black Coffee        ', N'Black as night                                    ', 1.9900, N'Drink          ')
+INSERT [dbo].[Product] ([ID], [Name], [Description], [Price], [Category]) VALUES (1, N'Black Coffee        ', N'Black as nigjt                                    ', 1.9900, N'Drink     ')
 GO
-INSERT [dbo].[Product] ([ID], [Name], [Description], [Price], [Category]) VALUES (2, N'Green Tea           ', N'It''s healthy right?                               ', 3.5500, N'Drink          ')
+INSERT [dbo].[Product] ([ID], [Name], [Description], [Price], [Category]) VALUES (2, N'Green Water         ', N'Water:Green                                       ', 10.9500, N'Gift      ')
 GO
-INSERT [dbo].[Product] ([ID], [Name], [Description], [Price], [Category]) VALUES (3, N'Water               ', N'Natural                                           ', 6.9900, N'Drink          ')
+INSERT [dbo].[Product] ([ID], [Name], [Description], [Price], [Category]) VALUES (3, N'Water               ', N'Natural                                           ', 6.9900, N'Drink     ')
 GO
-INSERT [dbo].[Product] ([ID], [Name], [Description], [Price], [Category]) VALUES (4, N'Bread               ', N'Baked with flour                                  ', 2.4300, N'Food           ')
+INSERT [dbo].[Product] ([ID], [Name], [Description], [Price], [Category]) VALUES (4, N'Bread               ', N'Baked from flour                                  ', 2.4300, N'Food      ')
 GO
-INSERT [dbo].[Product] ([ID], [Name], [Description], [Price], [Category]) VALUES (5, N'Cheese              ', N'Salt, and Fat. What else could you want?          ', 5.6300, N'Food           ')
+INSERT [dbo].[Product] ([ID], [Name], [Description], [Price], [Category]) VALUES (5, N'Cheese              ', N'Salt, and Fat what else would an American want?   ', 5.6300, N'Food      ')
 GO
-INSERT [dbo].[Product] ([ID], [Name], [Description], [Price], [Category]) VALUES (6, N'Soup                ', N'It''s like hot liquid salad                        ', 3.5700, N'Food           ')
+INSERT [dbo].[Product] ([ID], [Name], [Description], [Price], [Category]) VALUES (6, N'Soup of the Day     ', N'It''s like hot liquid salad                        ', 3.5700, N'Food      ')
 GO
-INSERT [dbo].[Product] ([ID], [Name], [Description], [Price], [Category]) VALUES (7, N'Chocolate Bar       ', N'Mmmmmm                                            ', 1.6300, N'Candy          ')
+INSERT [dbo].[Product] ([ID], [Name], [Description], [Price], [Category]) VALUES (7, N'Chocolate Bar       ', N'Mmmmmmm                                           ', 1.6300, N'Candy     ')
 GO
-INSERT [dbo].[Product] ([ID], [Name], [Description], [Price], [Category]) VALUES (8, N'Fudge               ', N'Like chocolate... but with more sugar             ', 14.5300, N'Candy          ')
+INSERT [dbo].[Product] ([ID], [Name], [Description], [Price], [Category]) VALUES (8, N'Fudge               ', N'Its like chocolate, but with more sugar           ', 14.5300, N'Candy     ')
 GO
-INSERT [dbo].[Product] ([ID], [Name], [Description], [Price], [Category]) VALUES (9, N'Gummy Bears         ', N'Only the best                                     ', 2.7800, N'Candy          ')
+INSERT [dbo].[Product] ([ID], [Name], [Description], [Price], [Category]) VALUES (9, N'Gummy Bears         ', N'Only the best                                     ', 2.7800, N'Candy     ')
 GO
-INSERT [dbo].[Product] ([ID], [Name], [Description], [Price], [Category]) VALUES (10, N'Travel Mug          ', N'So you can take your drink to go!                 ', 15.9800, N'Gift           ')
+INSERT [dbo].[Product] ([ID], [Name], [Description], [Price], [Category]) VALUES (10, N'Travel Mug          ', N'So you can take your drink to go!                 ', 15.9800, N'Gift      ')
 GO
-INSERT [dbo].[Product] ([ID], [Name], [Description], [Price], [Category]) VALUES (11, N'Keychain            ', N'So... you can tell your friends about us          ', 0.9500, N'Gift           ')
+INSERT [dbo].[Product] ([ID], [Name], [Description], [Price], [Category]) VALUES (11, N'Keychain            ', N'So... you can tell your friends about us          ', 0.9500, N'Gift      ')
+GO
+INSERT [dbo].[Product] ([ID], [Name], [Description], [Price], [Category]) VALUES (23, N'Monster             ', N'Lime Green Monster                                ', 2.9900, N'Drink     ')
 GO
 SET IDENTITY_INSERT [dbo].[Product] OFF
 GO
